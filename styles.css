@@ -1,0 +1,924 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+}
+
+header {
+    background-color: #d5a4ff;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 99%; /* Match the width of the .image-box */
+    left: 50%; /* Center the header */
+    transform: translateX(-50%); /* Correct centering */
+    z-index: 1000;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for better appearance */
+}
+
+.container {
+    max-width: 100%; /* Ensure container fills the header */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left Navigation Styling */
+.left-nav {
+    flex-grow: 1;
+}
+
+.left-nav span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3a3a3a; /* Slightly darker shade for the text */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    letter-spacing: 2px; /* Space out the letters for a sleek look */
+}
+
+/* Middle Navigation Styling */
+.middle-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: #ff000000; /* Light background for contrast */
+    padding: 10px 20px; /* Added padding */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+    transition: transform 0.3s ease; /* Add a smooth transform effect */
+}
+
+.nav-links li a {
+    color: #3a3a3a; /* Darker shade of black for a more modern look */
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: #e0e0e0; /* Light background color for the links */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+    background-color: #fa8460; /* Warm accent color for hover */
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3); /* Glow effect */
+}
+
+/* Right Navigation Styling */
+.right-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.right-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: #3a3a3a; /* Darker button background */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.right-nav a:hover {
+    background-color: #ffc400; /* Warm accent color */
+    transform: scale(1.1); /* Slightly larger on hover */
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3); /* Glow effect */
+}
+
+/* Last Child Adjustment */
+.right-nav a:last-child {
+    margin-right: 0;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+    display: none; /* Hidden by default */
+    font-size: 1.5rem;
+    color: #3a3a3a; /* Match the nav link color */
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-icon:hover {
+    transform: rotate(90deg); /* Rotate on hover for fun effect */
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 60px; /* Adjust to your navbar height */
+    right: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    z-index: 999;
+}
+
+@media (min-width: 769px) {
+    .nav-links li a {
+        color: #3a3a3a; /* Consistent color with rest of the nav */
+    }
+
+    .nav-links li a:hover {
+        color: #ffffff;
+        background-color: #ffe600; /* Accent color for desktop */
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive Media Query for Mobile */
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block; /* Show icon on mobile */
+        cursor: pointer;
+    }
+
+    .middle-nav, .right-nav, .left-nav {
+        display: none; /* Hide regular navs */
+    }
+
+    .mobile-menu {
+        display: block; /* Show mobile menu */
+    }
+
+    .nav-links li {
+        display: block; /* Stack links vertically */
+        margin-bottom: 15px;
+    }
+
+    .nav-links li a {
+        display: block; /* Full width links */
+        text-align: center; /* Centered text */
+        padding: 10px;
+        background-color: #ff5722; /* Accent color for mobile */
+        color: #ffffff;
+    }
+
+    .nav-links li a:hover {
+        background-color: #ffe600; /* Darker hover color */
+    }
+}
+
+/*For About part*/
+
+/* About Section Styling */
+#about {
+    position: relative;
+    height: 78vh;
+    background-color: #f0f0f0;
+    padding-top: 60px;
+}
+
+/* Image Slider Styling */
+.image-box {
+    width: 100%;
+    height: 99%;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #000;
+    background-color: #000;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 102; /* Ensure buttons are on top of all content */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* About Content Styling */
+.about-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    z-index: 101; /* Content is below buttons but above slider */
+    color: #fff;
+}
+
+/* Zigzag Placement */
+.about-content p {
+    width: 45%; /* Reduced width for more compact boxes */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px; /* Adjusted padding for a more compact look */
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.about-content p:nth-child(odd) {
+    align-self: flex-start; /* Align to the left */
+    margin-left: 60px;
+}
+
+.about-content p:nth-child(even) {
+    align-self: flex-end; /* Align to the right */
+    margin-right: 60px;
+}
+
+.about-content p:hover {
+    transform: translateY(-5px); /* Hover effect */
+}
+
+/* Text Styling */
+.colorful-text {
+    color: #ff00ff;
+    font-size: 1.2rem;
+    animation: shake 0.5s infinite alternate;
+}
+
+.big-text {
+    font-size: 1.5rem;
+}
+
+.white-text {
+    color: #ffffff;
+}
+
+.animated-text {
+    animation: colorChange 2s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ff0000;
+    }
+    50% {
+        color: #00ff00;
+    }
+    100% {
+        color: #0000ff;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+
+/*End of about part*/
+/*Classes part Start*/
+#classes {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#classes .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.class-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.class-info {
+    width: calc(33.33% - 40px);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+.class-info h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.class-info p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+#classes h2 {
+    background-color: #d5a4ff;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.class-info p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+    transition: transform 0.3s ease; /* Add transition for smooth transformation */
+}
+
+/* Apply hover effect on class descriptions */
+.class-info p:hover {
+    transform: translateY(-5px); /* Move the content up on hover */
+}
+
+
+@media (max-width: 768px) {
+    .class-info {
+        width: calc(50% - 40px);
+    }
+}
+/*Classes part End*/
+/*Challenges part start*/
+#challenges {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#challenges .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.challenge-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.challenge-info {
+    width: calc(33.33% - 40px);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+.challenge-info h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.challenge-info p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+#challenges h2 {
+    background-color: #d5a4ff;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .challenge-info {
+        width: calc(50% - 40px);
+    }
+}
+.challenge-info p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+    transition: transform 0.3s ease; /* Add transition for smooth transformation */
+}
+
+/* Apply hover effect on challenge descriptions */
+.challenge-info p:hover {
+    transform: translateY(-5px); /* Move the content up on hover */
+}
+
+
+/*Challenges part End*/
+/*Plans part Start*/
+#plans {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#plans .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.plan-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.plan-info {
+    width: calc(33.33% - 40px);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+.plan-info h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.plan-info p {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+#plans h2 {
+    background-color: #d5a4ff;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .plan-info {
+        width: calc(50% - 40px);
+    }
+}
+
+.plan-info p {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Add transition for smooth transformation */
+}
+
+/* Apply hover effect on plan descriptions */
+.plan-info p:hover {
+    transform: translateY(-5px); /* Move the content up on hover */
+}
+.plan-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.plan-info {
+    width: calc(33.33% - 40px);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    transition: transform 0.3s ease; /* Add transition for smooth transformation */
+}
+
+/* Apply hover effect on the entire plan box */
+.plan-box:hover .plan-info {
+    transform: translateY(-5px); /* Move the box up on hover */
+}
+
+/*Plans part end*/
+
+
+/*Contact Us part Start*/
+
+
+#contact {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+
+#contact .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Contact info boxes */
+.contact-info {
+    width: calc(33.33% - 40px);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    transition: transform 0.3s ease; /* Add transition for smooth transformation */
+}
+
+/* Apply hover effect on contact info boxes */
+.contact-info:hover {
+    transform: translateY(-5px); /* Move the box up on hover */
+}
+
+.contact-info h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+#contact h2 {
+    background-color: #d5a4ff;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .plan-info {
+        width: calc(50% - 40px);
+    }
+}
+
+/* Media query for smaller screens */
+/* Adjustments for smaller screens */
+@media screen and (max-width: 600px) {
+    /* Add this CSS to your existing stylesheet */
+    .contact-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-info {
+        padding: 20px; /* Adjust padding as needed to increase the size */
+        margin-bottom: 10px; /* Add margin to separate each contact info box */
+        border: 1px solid #ccc; /* Add border for better visibility */
+        border-radius: 10px; /* Optional: Add border radius for rounded corners */
+        width: 80%; /* Adjust width as needed */
+    }
+
+    .contact-info p {
+        margin: 5px 0; /* Adjust margin as needed */
+    }
+
+  }
+  
+/*Contact Us part end*/
+
+/*Products & Company Start*/
+
+/*Products & Company End*/
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.containera {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.footer-section {
+    margin: 0 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-section ul li:hover {
+    transform: translateY(-5px);
+}
+
+.footer-section ul li:hover a {
+    color: #ffd700; /* Change text color to yellow on hover */
+}
+.footer-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.footer-link:hover {
+    color: yellow; /* Change color on hover */
+}
+
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-icons li {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons li:hover {
+    transform: translateY(-5px);
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffd700;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*Apply all Hover effect*/
+/* Apply hover effect and color change separately to each section */
+
+/* Home Box */
+.home-box:hover {
+    /* Apply hover effect */
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    /* Apply color change */
+    background-color: #ffd700;
+}
+
+/* About Box */
+.about-box:hover {
+    /* Apply hover effect */
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    /* Apply color change */
+    background-color: #ff00ff; /* Change color on hover */
+}
+
+/* Classes Box */
+.classes-box:hover {
+    /* Apply hover effect */
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    /* Apply color change */
+    background-color: #00ff00; /* Change color on hover */
+}
+
+/* Challenges Box */
+.challenges-box:hover {
+    /* Apply hover effect */
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    /* Apply color change */
+    background-color: #0000ff; /* Change color on hover */
+}
+
+/* Plans Box */
+.plans-box:hover {
+    /* Apply hover effect */
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    /* Apply color change */
+    background-color: #ffff00; /* Change color on hover */
+}
+
+/* Contact Box */
+
+
+
+
+/* Apply fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .middle-nav {
+        display: none;
+    }
+
+    .right-nav .desktop-menu {
+        display: none;
+    }
+
+    .right-nav .mobile-menu {
+        flex-direction: column;
+        background-color: #d5a4ff;
+        border-radius: 20px;
+        padding: 10px;
+        position: fixed;
+        top: 60px;
+        right: 10px;
+        z-index: 999;
+    }
+
+    .mobile-menu.open {
+        display: flex; /* Show mobile menu when open class is present */
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        float: right;
+    }
+
+    .mobile-menu-icon img {
+        width: 20px;
+    }
+
+    .mobile-nav-links {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .mobile-nav-links li {
+        margin-bottom: 10px;
+    }
+
+    .mobile-nav-links li a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-nav-links li a:hover {
+        color: #ffd700;
+    }
+}

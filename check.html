@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay Perfect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="left-nav">
+                <span>Stay Perfect</span>
+            </div>
+            <nav class="middle-nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#classes">Classes</a></li>
+                    <li><a href="#challenges">Challenges</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="right-nav">
+                <div class="mobile-menu-icon">
+                    <img src="menu-icon.png" alt="Menu">
+                </div>
+                <div class="desktop-menu">
+                    <a id="loginLink" href="#" onclick="logoutOrRedirect()">Login</a>
+                    <a href="#membership">Membership</a>
+                </div>
+                <div class="mobile-menu">
+                    <ul class="mobile-nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#classes">Classes</a></li>
+                        <li><a href="#challenges">Challenges</a></li>
+                        <li><a href="#plans">Plans</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a id="mobileLoginLink" href="#" onclick="logoutOrRedirect()">Login</a></li>
+                        <li><a href="#membership">Membership</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+   <!-- About Section -->
+    <section id="about">
+        <div class="image-box">
+            <div class="slider">
+                <img src="images/b1.jpeg" alt="Slide 1">
+                <img src="images/b2.jpeg" alt="Slide 2">
+                <img src="images/b3.jpeg" alt="Slide 3">
+                <img src="images/b4.jpeg" alt="Slide 4">
+            </div>
+            <!-- Navigation Buttons -->
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+
+            <!-- About Content -->
+            <div class="about-content">
+                <p class="description">
+                    Elevate your fitness journey with <span class="colorful-text">Stay Perfect</span>. Our mission is to inspire and empower individuals to achieve their <span class="big-text">wellness goals</span> and embrace a lifestyle of <span class="white-text">vitality and balance</span>.
+                </p>
+                <p class="info" id="move-right">
+                    <span class="animated-text">Discover</span> a diverse range of fitness classes, personalized training sessions, and transformative wellness programs designed to nurture your body, mind, and spirit.
+                </p>
+                <p class="info">
+                    At <span class="colorful-text">Stay Perfect</span>, we believe in the transformative power of <span class="big-text">movement, mindfulness, and community</span>. Join us in our pursuit of <span class="white-text">health, happiness, and holistic well-being</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--Classes part-->
+    <section id="classes">
+        <div class="container">
+            <h2>Our Classes</h2>
+            <div class="class-box">
+                <div class="class-info">
+                    <h3>Yoga</h3>
+                    <p>A holistic practice that combines physical postures, breathing techniques, and meditation to enhance overall well-being.</p>
+                </div>
+                <div class="class-info">
+                    <h3>HIIT</h3>
+                    <p>High-Intensity Interval Training (HIIT) involves short bursts of intense exercise followed by brief recovery periods, designed to maximize calorie burn and improve cardiovascular fitness.</p>
+                </div>
+                <div class="class-info">
+                    <h3>Pilates</h3>
+                    <p>A low-impact exercise method focused on strengthening muscles, improving flexibility, and enhancing body awareness and control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Challenges Section -->
+    <section id="challenges">
+        <div class="container">
+            <h2>Our Challenges</h2>
+            <div class="challenge-box">
+                <div class="challenge-info">
+                    <h3>Weight Loss Challenge</h3>
+                    <p>Join our weight loss challenge and transform your body in just 30 days. Receive personalized workout plans and nutrition guidance to help you reach your goals.</p>
+                </div>
+                <div class="challenge-info">
+                    <h3>Strength Training Challenge</h3>
+                    <p>Take part in our strength training challenge and build muscle mass while improving your overall strength and endurance. Get access to expert trainers and specialized workouts.</p>
+                </div>
+                <div class="challenge-info">
+                    <h3>Flexibility Challenge</h3>
+                    <p>Enhance your flexibility and mobility with our flexibility challenge. Learn stretching techniques and participate in yoga classes designed to increase your range of motion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Plans Section -->
+    <section id="plans">
+        <div class="container">
+            <h2>Our Plans</h2>
+            <div class="plan-box">
+                <div class="plan-info">
+                    <h3>Basic Plan</h3>
+                    <p>Access to our basic fitness classes and facilities.</p>
+                </div>
+                <div class="plan-info">
+                    <h3>Premium Plan</h3>
+                    <p>Includes access to premium classes and personalized training sessions.</p>
+                </div>
+                <div class="plan-info">
+                    <h3>Ultimate Plan</h3>
+                    <p>Our all-inclusive plan with unlimited access to all classes, personalized training, and exclusive amenities.</p>
+                </div>
+                <div class="plan-info">
+                    <h3>Custom Plan</h3>
+                    <p>Create your own personalized plan tailored to your specific fitness goals and preferences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us Section -->
+    <header>
+        <div class="container">
+            <!-- Other header content here -->
+        </div>
+    </header>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <!-- Contact Us content here -->
+        </div>
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h3>Mr. Subhajit Gonai</h3>
+                </div>
+                <div class="contact-info">
+                    <p>Address<br>West Bengal, India</p>
+                </div>
+                <div class="contact-info">
+                    <p>Email: example@example.com</p>
+                    <p>Phone: 1234567890</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Other sections like hero, about, classes, challenges, plans, contact -->
+    <!-- Products & Company -->
+    <!-- End Products & Company-->
+    <!-- Start of Footer-->
+    <footer>
+        <div class="containera">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">Food</a></li>
+                        <li><a href="#" class="footer-link">Exercise</a></li>
+                        <li><a href="#" class="footer-link">Trainer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow us</h3>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Stay Perfect. All rights reserved.</p>
+        </div>
+    </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                mobileMenuIcon.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('open');
+                });
+            });
+        </script>
+    <!-- For update The login button to logout after successfully login-->
+    <script>
+        // Function to update the login button text based on the user's login status
+        function updateLoginButtonText() {
+            // Check if the user is logged in
+            var isLoggedIn = localStorage.getItem("loggedIn");
+
+            // Update the text based on the user's login status
+            if (isLoggedIn) {
+                document.getElementById("loginLink").innerHTML = '<a href="#" onclick="logout()">Logout</a>';
+                document.getElementById("mobileLoginLink").innerHTML = '<a href="#" onclick="logout()">Logout</a>';
+            } else {
+                document.getElementById("loginLink").innerHTML = '<a href="login.html">Login</a>';
+                document.getElementById("mobileLoginLink").innerHTML = '<a href="login.html">Login</a>';
+            }
+        }
+
+        // Logout function
+        function logout() {
+            // Perform logout actions here (e.g., clear local storage)
+            localStorage.removeItem("loggedIn");
+            // Redirect to login page
+            window.location.href = "xyz.html";
+        }
+
+        // Function to handle logout or redirect to login page
+        function logoutOrRedirect() {
+            // Check if the user is logged in
+            var isLoggedIn = localStorage.getItem("loggedIn");
+
+            if (isLoggedIn) {
+                logout();
+            } else {
+                window.location.href = "xyz.html";
+            }
+        }
+
+        // Call the function to update the login button text when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLoginButtonText();
+        });
+    </script>
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
+
